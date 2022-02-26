@@ -28,7 +28,7 @@ class ArticleService {
   }
 
   Future<List<NintendoArticles>> getSources(int pageCnt) async {
-    String apiKey = "9762abf28bmsh0944bb0a0d6f9b5p19d503jsn486b0cf6d273";
+    String apiKey = "";
     String url = "https://nintendo-news1.p.rapidapi.com/news?rapidapi-key=" +
         apiKey +
         "&p=" +
