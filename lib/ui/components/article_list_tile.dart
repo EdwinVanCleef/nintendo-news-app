@@ -26,45 +26,40 @@ Widget articleListTile(NintendoArticles source, BuildContext context) {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image(
-                  image: NetworkImage(
-                    source.imgSrc,
-                  ),
-                  height: 100,
-                  width: 130,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              const Padding(padding: EdgeInsets.only(left: 16)),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(
+                      height: 65.0,
+                      child: Text(
+                        source.title,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    const Padding(padding: EdgeInsets.only(top: 8)),
                     Text(
                       source.sourceArticle.toUpperCase(),
                       style: const TextStyle(
                         fontSize: 10,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.normal,
                       ),
-                    ),
-                    const Padding(padding: EdgeInsets.only(top: 8)),
-                    Text(
-                      source.title,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    const Padding(padding: EdgeInsets.only(top: 8)),
-                    Text(
-                      source.title.length > 100
-                          ? '${source.title.substring(0, 100)}...'
-                          : source.title,
-                      style: const TextStyle(fontSize: 12),
                     ),
                   ],
+                ),
+              ),
+              const Padding(padding: EdgeInsets.only(left: 16)),
+              ClipRRect(
+                child: Image(
+                  image: NetworkImage(
+                    source.imgSrc,
+                  ),
+                  height: 85,
+                  width: 110,
+                  fit: BoxFit.fill,
                 ),
               ),
             ],

@@ -24,7 +24,7 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.tune),
+            icon: const Icon(Icons.login_rounded),
           ),
         ],
       ),
@@ -49,6 +49,32 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
               );
           }
         },
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        elevation: 4.0,
+        icon: const Icon(Icons.search),
+        label: const Text('Search'),
+        backgroundColor: Colors.red[400],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.red,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.article),
+            label: 'My Articles',
+            backgroundColor: Colors.white,
+          ),
+        ],
+        selectedItemColor: Colors.white60,
+        unselectedItemColor: Colors.white,
       ),
     );
   }

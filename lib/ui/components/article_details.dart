@@ -2,8 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nintendo_news_app/data/article_model.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -73,6 +71,7 @@ class _ArticlePageState extends State<ArticlePage> {
           (BuildContext context, AsyncSnapshot<WebViewController> controller) {
         if (controller.hasData) {
           return FloatingActionButton(
+            backgroundColor: AppColors.red,
             onPressed: () async {
               var url = await controller.data.currentUrl();
               _favorites.add(url);
