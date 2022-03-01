@@ -12,6 +12,13 @@ class ArticleListScreen extends StatefulWidget {
 
 class _ArticleListScreenState extends State<ArticleListScreen> {
   Future<List<NintendoArticles>> _articleData;
+  int _selectedTabIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedTabIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +31,7 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.login_rounded),
+            icon: const Icon(Icons.login),
           ),
         ],
       ),
@@ -50,14 +57,6 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
           }
         },
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        elevation: 4.0,
-        icon: const Icon(Icons.search),
-        label: const Text('Search'),
-        backgroundColor: Colors.red[400],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.red,
         items: const <BottomNavigationBarItem>[
@@ -69,12 +68,19 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.article),
-            label: 'My Articles',
+            label: 'Articles',
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
             backgroundColor: Colors.white,
           ),
         ],
         selectedItemColor: Colors.white60,
         unselectedItemColor: Colors.white,
+        onTap: _onItemTapped,
+        currentIndex: _selectedTabIndex,
       ),
     );
   }

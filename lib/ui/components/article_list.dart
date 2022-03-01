@@ -63,7 +63,14 @@ class _ArticleListState extends State<ArticleList> {
         controller: scrollController,
         itemCount: articles.length,
         itemBuilder: (BuildContext context, int index) {
-          return articleListTile(articles[index], context);
+          if (index == articles.length - 1 &&
+              (currentPageNumber < totalPage || currentPageNumber == 1)) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else {
+            return articleListTile(articles[index], context);
+          }
         },
       ),
     );
