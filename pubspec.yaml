@@ -27,6 +27,7 @@ dependencies:
   cached_network_image: ^2.3.2+1
   intl: ^0.16.1
   http: ^0.12.2
+  bottom_navy_bar: ^6.0.0
 
 dev_dependencies:
   flutter_test:
