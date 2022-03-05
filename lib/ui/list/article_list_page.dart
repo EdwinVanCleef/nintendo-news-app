@@ -1,6 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:nintendo_news_app/ui/screens/donate_screen.dart';
+import 'package:nintendo_news_app/ui/screens/login_screen.dart';
 import 'package:nintendo_news_app/ui/screens/home_screen.dart';
 import 'package:nintendo_news_app/ui/screens/myarticles_screen.dart';
 import 'package:nintendo_news_app/ui/screens/settings_screen.dart';
@@ -75,7 +75,7 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
       case 2:
         return SettingsPage();
       case 3:
-        return DonatePage();
+        return LoginPage();
       case 0:
       default:
         return HomePage();

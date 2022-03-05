@@ -20,14 +20,17 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   webview_flutter: ^3.0.1
-  infinite_scroll_pagination: ^2.2.1
-  google_fonts: ^1.1.0
-  dio: ^3.0.10
-  provider: ^4.3.2+2
-  cached_network_image: ^2.3.2+1
-  intl: ^0.16.1
-  http: ^0.12.2
+  infinite_scroll_pagination: ^3.1.0
+  google_fonts: 2.2.0
+  dio: ^4.0.4
+  provider: ^6.0.2
+  cached_network_image: ^3.2.0
+  intl: ^0.17.0
+  http: ^0.13.4
   bottom_navy_bar: ^6.0.0
+  firebase_core: ^1.12.0
+  firebase_auth: ^3.3.8
+  cloud_firestore: ^3.1.9
 
 dev_dependencies:
   flutter_test:
