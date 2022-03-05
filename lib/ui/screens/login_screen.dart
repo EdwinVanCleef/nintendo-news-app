@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Login(),
-    );
-  }
+  Widget build(BuildContext context) => Scaffold(
+        body: StreamBuilder<User>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return const Center(
+                child: Text('Account Details'),
+              );
+            } else {
+              return const Login();
+            }
+          },
+        ),
+      );
 }
 
 class Login extends StatefulWidget {

@@ -59,8 +59,8 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
           activeColor: activeColor,
         ),
         BottomNavyBarItem(
-          icon: const Icon(Icons.coffee),
-          title: const Text('Donate'),
+          icon: const Icon(Icons.account_circle_rounded),
+          title: const Text('Account'),
           textAlign: TextAlign.center,
           activeColor: activeColor,
         ),
